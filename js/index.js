@@ -55,10 +55,25 @@ document.querySelector('.cta-text').style.whiteSpace = 'pre';
 document.querySelector('button').textContent = siteContent.cta.button;
 
 
-const textBlocks = document.querySelectorAll('.text-content h4');
-const textArr = Array.from(textBlocks);
+const textTitles = document.querySelectorAll('.text-content h4');
+const textArr = Array.from(textTitles);
+
+const textBlocks = document.querySelectorAll('.text-content p');
+const textArrPar = Array.from(textBlocks);
 
 textArr[0].textContent = siteContent["main-content"]["features-h4"];
+textArr[1].textContent = siteContent["main-content"]["about-h4"];
+textArr[2].textContent = siteContent["main-content"]["services-h4"];
+textArr[3].textContent = siteContent["main-content"]["product-h4"];
+textArr[4].textContent = siteContent["main-content"]["vision-h4"];
+
+textArrPar[0].textContent = siteContent["main-content"]["features-content"];
+textArrPar[1].textContent = siteContent["main-content"]["about-content"];
+textArrPar[2].textContent = siteContent["main-content"]["services-content"];
+textArrPar[3].textContent = siteContent["main-content"]["product-content"];
+textArrPar[4].textContent = siteContent["main-content"]["vision-content"];
+
 
 
 document.querySelector('footer').textContent = siteContent.footer.copyright;
+document.querySelector('footer').style.fontSize = '0.75rem';
