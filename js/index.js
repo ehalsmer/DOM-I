@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM\nIs\nAwesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -40,3 +40,25 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const rightImg = document.querySelector('#cta-img');
+rightImg.src = '/img/header-img.png'
+
+const middleImg = document.querySelector('#middle-img');
+middleImg.src = '/img/mid-page-accent.jpg';
+
+// document.querySelector('')
+
+document.querySelector('h1').textContent = siteContent.cta.h1;
+document.querySelector('.cta-text').style.whiteSpace = 'pre';
+
+document.querySelector('button').textContent = siteContent.cta.button;
+
+
+const textBlocks = document.querySelectorAll('.text-content h4');
+const textArr = Array.from(textBlocks);
+
+textArr[0].textContent = siteContent["main-content"]["features-h4"];
+
+
+document.querySelector('footer').textContent = siteContent.footer.copyright;
