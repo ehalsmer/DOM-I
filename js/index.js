@@ -50,6 +50,10 @@ middleImg.src = '/img/mid-page-accent.jpg';
 // Navigation
 
 const navItems = document.querySelectorAll('nav>a');
+
+// navItems.appendChild(newNavItem);
+
+
 const navArr = Array.from(navItems);
 
 navArr[0].textContent = siteContent["nav"]["nav-item-1"];
@@ -59,6 +63,30 @@ navArr[3].textContent = siteContent["nav"]["nav-item-4"];
 navArr[4].textContent = siteContent["nav"]["nav-item-5"];
 navArr[5].textContent = siteContent["nav"]["nav-item-6"];
 
+// Set nav links color to green
+navArr.forEach(a => a.style.color = 'green');
+navArr.forEach(a => a.style.fontSize = '15px');
+
+
+// New nav items, appended and prepended
+const nav = document.querySelector('nav');
+
+const newNavItem = document.createElement('a');
+newNavItem.textContent = 'Documentation';
+newNavItem.style.color = 'green';
+newNavItem.style.fontSize = '15px';
+
+nav.appendChild(newNavItem);
+
+const newNavItem2 = document.createElement('a');
+newNavItem2.textContent = 'Download';
+newNavItem2.style.color = 'green';
+newNavItem2.style.fontSize = '15px';
+nav.prepend(newNavItem2);
+
+// document.querySelector('nav>a').style.fontSize = '10px';
+
+// document.querySelector('nav>a').style.color = 'green';
 
 // Top Content
 
