@@ -93,7 +93,10 @@ nav.prepend(newNavItem2);
 document.querySelector('h1').textContent = siteContent.cta.h1;
 document.querySelector('.cta-text').style.whiteSpace = 'pre';
 
-document.querySelector('button').textContent = siteContent.cta.button;
+// Button
+const button = document.querySelector('button');
+button.textContent = siteContent.cta.button;
+button.addEventListener('click', (event) => {alert("This button doesn't do anything! (except this)")})
 
 // Main Content
 const textTitles = document.querySelectorAll('.text-content h4');
@@ -114,6 +117,13 @@ textArrPar[2].textContent = siteContent["main-content"]["services-content"];
 textArrPar[3].textContent = siteContent["main-content"]["product-content"];
 textArrPar[4].textContent = siteContent["main-content"]["vision-content"];
 
+const paragraphs = document.querySelector('.main-content p');
+paragraphs.addEventListener('mouseenter', (event)=>{
+  paragraphs.style.color = 'green';
+  setTimeout(function(){
+    paragraphs.style.color = 'black';
+  }, 500)
+}, false);
 
 // Contact
 document.querySelector('.contact h4').textContent = siteContent.contact["contact-h4"];
