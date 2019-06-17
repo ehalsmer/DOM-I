@@ -38,7 +38,7 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+let logo = document.querySelector("#logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const rightImg = document.querySelector('#cta-img');
@@ -47,14 +47,27 @@ rightImg.src = '/img/header-img.png'
 const middleImg = document.querySelector('#middle-img');
 middleImg.src = '/img/mid-page-accent.jpg';
 
-// document.querySelector('')
+// Navigation
+
+const navItems = document.querySelectorAll('nav>a');
+const navArr = Array.from(navItems);
+
+navArr[0].textContent = siteContent["nav"]["nav-item-1"];
+navArr[1].textContent = siteContent["nav"]["nav-item-2"];
+navArr[2].textContent = siteContent["nav"]["nav-item-3"];
+navArr[3].textContent = siteContent["nav"]["nav-item-4"];
+navArr[4].textContent = siteContent["nav"]["nav-item-5"];
+navArr[5].textContent = siteContent["nav"]["nav-item-6"];
+
+
+// Top Content
 
 document.querySelector('h1').textContent = siteContent.cta.h1;
 document.querySelector('.cta-text').style.whiteSpace = 'pre';
 
 document.querySelector('button').textContent = siteContent.cta.button;
 
-
+// Main Content
 const textTitles = document.querySelectorAll('.text-content h4');
 const textArr = Array.from(textTitles);
 
@@ -74,6 +87,20 @@ textArrPar[3].textContent = siteContent["main-content"]["product-content"];
 textArrPar[4].textContent = siteContent["main-content"]["vision-content"];
 
 
+// Contact
+document.querySelector('.contact h4').textContent = siteContent.contact["contact-h4"];
 
+const contactPar = document.querySelectorAll('.contact p');
+contactArr = Array.from(contactPar);
+
+contactArr[0].textContent = siteContent["contact"]["address"];
+contactArr[1].textContent = siteContent["contact"]["phone"];
+contactArr[2].textContent = siteContent["contact"]["email"];
+
+document.querySelector('.contact').style.fontSize = '16px';
+document.querySelector('.contact').style.maxWidth = '200px';
+
+
+// Footer
 document.querySelector('footer').textContent = siteContent.footer.copyright;
 document.querySelector('footer').style.fontSize = '0.75rem';
