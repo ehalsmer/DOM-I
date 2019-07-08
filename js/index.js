@@ -37,9 +37,22 @@ const siteContent = {
   },
 };
 
+// Header styles:
+const header = document.querySelector('header');
+// header.style.border = '1px solid blue';
+header.style.borderBottom = '1px double green';
+header.style.position = 'fixed';
+header.style.top = '0';
+header.style.maxWidth = '880px';
+header.style.backgroundImage = 'linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0.8))';
+// header.style.opacity = '50%';
+
 // Example: Update the img src for the logo
 let logo = document.querySelector("#logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+// logo.addEventListener('dblclick', (event)=>logo.setAttribute('src', 'img/logoOn.png')
+logo.addEventListener('click', (event)=>alert('hi'));
+
 
 const rightImg = document.querySelector('#cta-img');
 rightImg.src = '/img/header-img.png'
@@ -70,11 +83,14 @@ navArr.forEach(a => a.style.fontSize = '15px');
 
 // New nav items, appended and prepended
 const nav = document.querySelector('nav');
+// nav.style.border = '1px solid red';
 
 const newNavItem = document.createElement('a');
-newNavItem.textContent = 'Documentation';
+newNavItem.textContent = 'Docs';
 newNavItem.style.color = 'green';
 newNavItem.style.fontSize = '15px';
+newNavItem.style.cursor = 'pointer';
+
 
 nav.appendChild(newNavItem);
 
@@ -82,6 +98,7 @@ const newNavItem2 = document.createElement('a');
 newNavItem2.textContent = 'Download';
 newNavItem2.style.color = 'green';
 newNavItem2.style.fontSize = '15px';
+newNavItem2.style.cursor = 'pointer';
 nav.prepend(newNavItem2);
 
 // document.querySelector('nav>a').style.fontSize = '10px';
@@ -117,13 +134,23 @@ textArrPar[2].textContent = siteContent["main-content"]["services-content"];
 textArrPar[3].textContent = siteContent["main-content"]["product-content"];
 textArrPar[4].textContent = siteContent["main-content"]["vision-content"];
 
-const paragraphs = document.querySelector('.main-content p');
-paragraphs.addEventListener('mouseenter', (event)=>{
-  paragraphs.style.color = 'green';
-  setTimeout(function(){
-    paragraphs.style.color = 'black';
-  }, 500)
-}, false);
+textArrPar.forEach((text) => {
+    text.addEventListener('mouseenter', (event)=>{
+      text.style.color = '#222f5b';
+      // text.style.fontWeight = 'bold';
+      text.style.fontSize = '17px';
+      text.style.lineHeight = '20px';
+      text.style.transition = 'font-size 0.3s, line-height 0.3s'
+      })
+    text.addEventListener('mouseleave', (event)=>{
+      text.style.color = 'black';
+      // text.style.fontWeight = 'normal';
+      text.style.fontSize = '16px';
+      text.style.lineHeight = '18px';
+      text.style.transition = 'font-size 0.5s, line-height 0.5s'
+    })
+})
+
 
 // Contact
 document.querySelector('.contact h4').textContent = siteContent.contact["contact-h4"];
@@ -138,6 +165,13 @@ contactArr[2].textContent = siteContent["contact"]["email"];
 document.querySelector('.contact').style.fontSize = '16px';
 document.querySelector('.contact').style.maxWidth = '200px';
 
+// Click to email
+const email = document.querySelector('.contact p:last-child');
+email.style.cursor = 'pointer';
+email.style.fontWeight = 'bold';
+email.style.color = 'green';
+
+email.addEventListener('click', (event)=>document.location='mailto:sales@greatidea.io')
 
 // Footer
 document.querySelector('footer').textContent = siteContent.footer.copyright;
