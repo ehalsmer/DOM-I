@@ -2,6 +2,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.digits {
+  margin: 20px;
 }
 
 .digit {
@@ -11,4 +16,26 @@ body {
 
 .redDigit {
   color: red;
+}
+
+button {
+  margin: 20px;
+  padding: 5px 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);
+  background: #f8f8f8;
+  cursor: pointer;
+}
+button:hover, button:focus {
+  background: #fff4e6;
+}
+
+button:focus {
+  outline: 1px solid #fff4e6;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.95);
 }
